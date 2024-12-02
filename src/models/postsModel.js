@@ -9,3 +9,11 @@ export async function getAllPosts() {
 
     return collection.find().toArray();
 }
+
+
+export async function creatPost( postContent ) {
+    const dataBase = connectionData.db("ImersaoBackEnd");
+    const collection = dataBase.collection("posts");
+
+    return collection.insertOne(postContent);
+}
